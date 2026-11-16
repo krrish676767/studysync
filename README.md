@@ -121,9 +121,9 @@ mysql -u ss_student -p'StudySync@Student1' studysync -e "SELECT password_hash FR
 ```bash
 git init
 git add .
-git commit -m "StudySync: DBMS mini project"
+git commit -m "StudySync: Student Course and Study Management System (DBMS Mini Project)"
 git branch -M main
-git remote add origin https://github.com/<your-username>/studysync.git
+git remote add origin https://github.com/krrish676767/StudySync.git
 git push -u origin main
 ```
 
