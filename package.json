@@ -1,0 +1,24 @@
+{
+  "name": "studysync",
+  "version": "1.0.0",
+  "private": true,
+  "description": "StudySync - Student Course & Study Management System (DBMS Mini Project): Next.js + MySQL + MongoDB",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "db:mongo": "node scripts/setup-mongo.mjs",
+    "db:check": "node scripts/check-connections.mjs",
+    "db:queries": "node scripts/gen-queries-sql.mjs"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "jose": "^6.0.11",
+    "mongodb": "^6.17.0",
+    "mysql2": "^3.14.1",
+    "next": "15.5.29",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "type": "module"
+}
