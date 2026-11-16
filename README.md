@@ -128,3 +128,8 @@ git push -u origin main
 ```
 
 `.env.local` and `node_modules/` are already in `.gitignore`.
+
+## 9. Contributors
+
+- Krrish ([@krrish676767](https://github.com/krrish676767))
+- A R Akshay Kumar ([@Akshayarcot](https://github.com/Akshayarcot))
