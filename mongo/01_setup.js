@@ -77,7 +77,7 @@ db.activity_logs.createIndex({ action: 1 }, { name: 'by_action' });
 // ---------------------------------------------------------------- sample data
 // owner_id values are students.student_id in MySQL; course_code is courses.course_code
 const KRRISH = '11111111-1111-1111-1111-111111111111';
-const ROHIT = '33333333-3333-3333-3333-333333333333';
+const AKSHAY = '33333333-3333-3333-3333-333333333333';
 const MEERA = '77777777-7777-7777-7777-777777777777';
 const ALAN = '22222222-2222-2222-2222-222222222222';
 const daysAgo = (d) => new Date(Date.now() - d * 86400000);
@@ -106,11 +106,11 @@ db.notes.insertMany([
   note(KRRISH, 'Krrish P Raju', null, 'Weekly study plan',
     'Mon/Wed: DBMS project. Tue/Thu: Algorithms problem sets. Fri: Networks lab. Weekend: revision and flashcards.',
     ['planning'], false, [], 0),
-  note(ROHIT, 'Rohit Sharma', 'CS301', 'SQL joins cheat sheet',
+  note(AKSHAY, 'A R Akshay Kumar', 'CS301', 'SQL joins cheat sheet',
     'INNER JOIN keeps matching rows only. LEFT JOIN keeps every row of the left table. A SELF JOIN joins a table to itself using aliases. Use NOT EXISTS for anti-joins.',
     ['sql', 'joins', 'dbms'], true,
     [card('Which join keeps unmatched left rows?', 'LEFT OUTER JOIN.')], 6),
-  note(ROHIT, 'Rohit Sharma', 'CS304', 'Naive Bayes summary',
+  note(AKSHAY, 'A R Akshay Kumar', 'CS304', 'Naive Bayes summary',
     'P(class | features) is proportional to P(class) * product of P(feature | class). Assumes conditional independence. Use Laplace smoothing to avoid zero probabilities.',
     ['ml', 'naive-bayes', 'exam'], true, [], 4),
   note(MEERA, 'Meera Nair', 'CS301', 'MongoDB aggregation stages',
@@ -131,8 +131,8 @@ db.activity_logs.insertMany([
   { user_id: KRRISH, user_name: 'Krrish P Raju', role: 'student', action: 'login', details: {}, at: daysAgo(3) },
   { user_id: KRRISH, user_name: 'Krrish P Raju', role: 'student', action: 'study_session_logged', details: { minutes: 75 }, at: daysAgo(2) },
   { user_id: KRRISH, user_name: 'Krrish P Raju', role: 'student', action: 'note_created', details: { title: 'Normalization quick revision' }, at: daysAgo(2) },
-  { user_id: ROHIT, user_name: 'Rohit Sharma', role: 'student', action: 'login', details: {}, at: daysAgo(2) },
-  { user_id: ROHIT, user_name: 'Rohit Sharma', role: 'student', action: 'assignment_submitted', details: { assignment_id: 'a207-nb', version: 1 }, at: daysAgo(4) },
+  { user_id: AKSHAY, user_name: 'A R Akshay Kumar', role: 'student', action: 'login', details: {}, at: daysAgo(2) },
+  { user_id: AKSHAY, user_name: 'A R Akshay Kumar', role: 'student', action: 'assignment_submitted', details: { assignment_id: 'a207-nb', version: 1 }, at: daysAgo(4) },
   { user_id: MEERA, user_name: 'Meera Nair', role: 'student', action: 'assignment_submitted', details: { assignment_id: 'a204-dp', version: 1 }, at: daysAgo(1) },
   { user_id: ALAN, user_name: 'Prof. Alan Turing', role: 'instructor', action: 'login', details: {}, at: daysAgo(1) },
   { user_id: ALAN, user_name: 'Prof. Alan Turing', role: 'instructor', action: 'submission_graded', details: { submission_id: 9, points: 48 }, at: daysAgo(1) },

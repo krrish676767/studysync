@@ -34,7 +34,7 @@ Run everything from the project folder.
 npm install
 
 # 2. build the MySQL database: tables, data, procedures, triggers, roles
-mysql -u root -p < sql/00_run_all.sql
+cat sql/01_schema.sql sql/02_seed.sql sql/03_advanced.sql sql/04_roles.sql | mysql -u root -p
 
 # 3. build the MongoDB database: collections, validators, indexes, data
 npm run db:mongo            # or:  mongosh mongo/01_setup.js
@@ -61,7 +61,7 @@ The password of every demo account is `password123`.
 | Instructor | alan@studysync.edu | create assignment, grade (trigger + audit log), roster, finalize grades |
 | Admin | admin@studysync.edu | change roles, deactivate users, grade audit log, MongoDB activity analytics |
 
-Other students: rohit@, ananya@, dev@, meera@, arjun@ (same domain). Second instructor: grace@studysync.edu.
+Other students: akshay@, ananya@, dev@, meera@, arjun@ (same domain). Second instructor: grace@studysync.edu.
 
 ## 4. Where each rubric item is
 
@@ -99,7 +99,7 @@ mysql -u ss_student -p'StudySync@Student1' studysync -e "SELECT password_hash FR
 
 | Command | Purpose |
 | --- | --- |
-| `mysql -u root -p < sql/00_run_all.sql` | reset the MySQL data to the sample state |
+| `cat sql/01_schema.sql sql/02_seed.sql sql/03_advanced.sql sql/04_roles.sql | mysql -u root -p` | reset the MySQL data to the sample state |
 | `npm run db:mongo` | reset the MongoDB data to the sample state |
 | `mysql -u root -p --table < sql/05_queries.sql` | run all 30 queries and the DML / procedure demo in the terminal |
 | `mongosh mongo/02_crud_and_aggregation.js` | run the MongoDB CRUD and aggregation demo |
