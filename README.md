@@ -109,27 +109,14 @@ mysql -u ss_student -p'StudySync@Student1' studysync -e "SELECT password_hash FR
 
 ## 7. Troubleshooting
 
-- **`Access denied for user 'ss_student'`**: `sql/04_roles.sql` did not run. Run `sql/00_run_all.sql` as root again.
+- **`Access denied for user 'ss_student'`**: `sql/04_roles.sql` did not run. Run the setup command from section 2, step 2, as root again.
 - **`Your password does not satisfy the current policy requirements`** while running `04_roles.sql`: your MySQL has a stricter
   password policy. Change the four passwords in `sql/04_roles.sql` and the same four in `.env.local`.
 - **"Database is not reachable"** on the Notes page: MongoDB is not running (`brew services start mongodb-community`).
 - **MySQL on another port or host**: edit `MYSQL_HOST` / `MYSQL_PORT` in `.env.local`.
 - After an admin changes someone's role, that user has to sign out and in again to get a token with the new role.
 
-## 8. Publishing to GitHub
-
-```bash
-git init
-git add .
-git commit -m "StudySync: Student Course and Study Management System (DBMS Mini Project)"
-git branch -M main
-git remote add origin https://github.com/krrish676767/StudySync.git
-git push -u origin main
-```
-
-`.env.local` and `node_modules/` are already in `.gitignore`.
-
-## 9. Contributors
+## 8. Contributors
 
 - Krrish ([@krrish676767](https://github.com/krrish676767))
 - A R Akshay Kumar ([@Akshayarcot](https://github.com/Akshayarcot))
